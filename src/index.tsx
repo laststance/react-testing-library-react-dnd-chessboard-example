@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Board knightPosition={[0, 0]} />
+    <Board knightPosition={[7, 4]} />
   </React.StrictMode>,
   document.getElementById('root')
 )
