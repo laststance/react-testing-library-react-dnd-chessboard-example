@@ -1,15 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import Knight from './Knight'
-import Square from './Square'
+import Board from './Board'
+
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Square black>
-      <Knight />
-    </Square>
+    <Board knightPosition={[0, 0]} />
   </React.StrictMode>,
   document.getElementById('root')
 )
