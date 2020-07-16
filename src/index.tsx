@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import Board from './Board'
-import { observe } from './Game'
+import { KnightPosition, observe } from './Game'
 
 import * as serviceWorker from './serviceWorker'
 
 const root = document.getElementById('root')
 
-observe((knightPosition: number[]) =>
+observe((knightPosition: KnightPosition) =>
   ReactDOM.render(<Board knightPosition={knightPosition} />, root)
 )
 

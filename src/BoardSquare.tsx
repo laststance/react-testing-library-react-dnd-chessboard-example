@@ -1,13 +1,13 @@
 import React from 'react'
 import Square from './Square'
 import Overlay from './Overlay'
-import { canMoveKnight, moveKnight } from './Game'
-import { ItemTypes } from './Constants'
+import { canMoveKnight, moveKnight, X, Y } from './Game'
+import { ItemTypes } from './Game'
 import { useDrop } from 'react-dnd'
 
 interface Props {
-  x: number
-  y: number
+  x: X
+  y: Y
 }
 
 const BoardSquare: React.FC<Props> = ({ x, y, children }) => {

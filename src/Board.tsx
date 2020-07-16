@@ -3,9 +3,10 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Knight from './Knight'
 import BoardSquare from './BoardSquare'
+import { KnightPosition, X, Y } from './Game'
 
 interface Props {
-  knightPosition: number[]
+  knightPosition: KnightPosition
 }
 
 const Board: React.FC<Props> = function Board({ knightPosition }) {
@@ -30,9 +31,9 @@ const Board: React.FC<Props> = function Board({ knightPosition }) {
   )
 }
 
-function renderSquare(i: number, knightPosition: number[]) {
-  const x = i % 8
-  const y = Math.floor(i / 8)
+function renderSquare(i: number, knightPosition: KnightPosition) {
+  const x = (i % 8) as X
+  const y = Math.floor(i / 8) as Y
   return (
     <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
       <BoardSquare x={x} y={y}>
@@ -42,7 +43,7 @@ function renderSquare(i: number, knightPosition: number[]) {
   )
 }
 
-function renderPiece(x: number, y: number, [knightX, knightY]: number[]) {
+function renderPiece(x: X, y: Y, [knightX, knightY]: [X, Y]) {
   if (x === knightX && y === knightY) {
     return <Knight />
   }
