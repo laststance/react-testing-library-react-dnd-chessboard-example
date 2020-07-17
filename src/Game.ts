@@ -1,5 +1,6 @@
-// 8×8
-
+/*
+ This is chess rules definition
+ */
 export type X = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
 export type Y = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
 export type KnightPosition = [X, Y]
