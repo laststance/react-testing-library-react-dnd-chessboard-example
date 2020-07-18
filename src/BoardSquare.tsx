@@ -24,6 +24,7 @@ const BoardSquare: React.FC<Props> = ({ x, y, children }) => {
 
   return (
     <div
+      role="gridcell"
       ref={drop}
       style={{
         position: 'relative',

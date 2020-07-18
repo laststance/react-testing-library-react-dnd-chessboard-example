@@ -19,6 +19,7 @@ const Knight: React.FC = () => {
       <div
         ref={drag}
         style={{
+          display: 'block',
           opacity: isDragging ? 0.5 : 1,
           fontSize: '64px',
           fontWeight: 'bold',
