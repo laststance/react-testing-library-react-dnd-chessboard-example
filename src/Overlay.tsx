@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { HTMLProps } from 'react'
 
 export interface OverlayProps {
   color: string
+  other?: HTMLProps<HTMLDivElement>[]
 }
 
-const Overlay: React.FC<OverlayProps> = ({ color }) => {
+const Overlay: React.FC<OverlayProps> = ({ color, other }) => {
   return (
     <div
       style={{
@@ -17,6 +18,7 @@ const Overlay: React.FC<OverlayProps> = ({ color }) => {
         opacity: 0.5,
         backgroundColor: color,
       }}
+      {...other}
     />
   )
 }

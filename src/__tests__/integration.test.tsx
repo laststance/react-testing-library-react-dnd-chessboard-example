@@ -1,6 +1,6 @@
 import React from 'react'
 import '../index.css'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Board from '../Board'
 import { observe, KnightPosition, releaseObserver } from '../Game'
 
@@ -43,4 +43,11 @@ test('should exist Knight on board', () => {
 test('should board have 64 cells', () => {
   const boardSquares = screen.getAllByRole('gridcell')
   expect(boardSquares.length).toBe(64) // chessboard ragnge is 8 * 8
+})
+
+test('can move yellow Knight position red', () => {
+  const Knight = screen.getByText('♘')
+  fireEvent.dragOver(Knight)
+  const boardSquares = screen.getAllByRole('gridcell')
+  screen.debug(boardSquares)
 })

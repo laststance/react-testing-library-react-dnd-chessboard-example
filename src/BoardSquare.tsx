@@ -26,6 +26,7 @@ const BoardSquare: React.FC<Props> = ({ x, y, children }) => {
     <div
       role="gridcell"
       ref={drop}
+      data-testid={children ? 'KnightPosition' : ''}
       style={{
         position: 'relative',
         width: '100%',
