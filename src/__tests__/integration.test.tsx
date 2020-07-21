@@ -2,15 +2,19 @@ import React from 'react'
 import '../index.css'
 import { render, screen } from '@testing-library/react'
 import Board from '../Board'
-import { observe, KnightPosition } from '../Game'
+import { observe, KnightPosition, releaseObserver } from '../Game'
 
-beforeAll(() => {
+beforeEach(() => {
   observe((knightPosition: KnightPosition) =>
     render(<Board knightPosition={knightPosition} />)
   )
 })
 
-test('single big turbo', () => {
+afterEach(() => {
+  releaseObserver()
+})
+
+test('should exist Knight on board', () => {
   const Knight = screen.getByText('♘')
 
   const display = window.getComputedStyle(Knight).getPropertyValue('display')
@@ -34,7 +38,9 @@ test('single big turbo', () => {
     fontWeight: 'bold',
     cursor: 'move',
   })
+})
 
+test('should board have 64 cells', () => {
   const boardSquares = screen.getAllByRole('gridcell')
   expect(boardSquares.length).toBe(64) // chessboard ragnge is 8 * 8
 })

@@ -44,3 +44,9 @@ function emitChange(): void {
   }
   observer(knightPosition)
 }
+
+export function releaseObserver(): void {
+  if (typeof observer === 'function') {
+    observer = null
+  }
+}
