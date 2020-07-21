@@ -36,7 +36,7 @@ function renderSquare(i: number, knightPosition: KnightPosition) {
   const y = Math.floor(i / 8) as Y
   return (
     <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
-      <BoardSquare x={x} y={y}>
+      <BoardSquare x={x} y={y} data-testid={i + ': Square'}>
         {renderPiece(x, y, knightPosition)}
       </BoardSquare>
     </div>

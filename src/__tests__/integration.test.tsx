@@ -45,9 +45,20 @@ test('should board have 64 cells', () => {
   expect(boardSquares.length).toBe(64) // chessboard ragnge is 8 * 8
 })
 
-test('can move yellow Knight position red', () => {
+test('Should be yellow that can Knight drop and Knight position square should be red', () => {
   const Knight = screen.getByText('♘')
-  fireEvent.dragOver(Knight)
+
   const boardSquares = screen.getAllByRole('gridcell')
-  screen.debug(boardSquares)
+
+  fireEvent.dragStart(Knight)
+  fireEvent.drag(Knight)
+  fireEvent.dragEnter(boardSquares[58])
+  fireEvent.dragOver(boardSquares[58])
+
+  const KnightDropableSquares = screen.getAllByTestId('YellowOverlay')
+  expect(KnightDropableSquares.length).toBe(3)
+  KnightDropableSquares.forEach((square) => {
+    expect(square).toHaveStyle('backgroundColor: yellow')
+  })
+  expect(screen.getByTestId('RedOverlay')).toHaveStyle('backgroundColor: red')
 })

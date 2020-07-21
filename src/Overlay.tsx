@@ -5,7 +5,7 @@ export interface OverlayProps {
   other?: HTMLProps<HTMLDivElement>[]
 }
 
-const Overlay: React.FC<OverlayProps> = ({ color, other }) => {
+const Overlay: React.FC<OverlayProps> = ({ color, ...other }) => {
   return (
     <div
       style={{
