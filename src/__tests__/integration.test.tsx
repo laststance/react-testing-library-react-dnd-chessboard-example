@@ -5,6 +5,11 @@ import Board from '../Board'
 import { observe, KnightPosition, releaseObserver } from '../Game'
 
 beforeEach(() => {
+  /*
+   * Every time Knight initial position: "57"
+   * and Knight droppable positions are "40", "42", "51"
+   * when you got all cells with screen.getAllByRole('gridcell')
+   */
   observe((knightPosition: KnightPosition) =>
     render(<Board knightPosition={knightPosition} />)
   )
@@ -14,7 +19,7 @@ afterEach(() => {
   releaseObserver()
 })
 
-test('should exist Knight on board', () => {
+test('should exist Knight and certain visual on board', () => {
   const Knight = screen.getByText('♘')
 
   const display = window.getComputedStyle(Knight).getPropertyValue('display')
@@ -45,12 +50,11 @@ test('should board have 64 cells', () => {
   expect(boardSquares.length).toBe(64) // chessboard ragnge is 8 * 8
 })
 
-test('Should be yellow that can Knight drop and Knight position square should be red', () => {
+test('Should be yellow square bg-color where accept Knight drop and Knight position square should be red bg-color', () => {
   const Knight = screen.getByText('♘')
   const boardSquares = screen.getAllByRole('gridcell')
 
   fireEvent.dragStart(Knight)
-  fireEvent.drag(Knight)
   fireEvent.dragEnter(boardSquares[57]) // 57 is initial position of Knight
   fireEvent.dragOver(boardSquares[57])
 
