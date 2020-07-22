@@ -5,13 +5,10 @@ import Board from '../Board'
 import { observe, KnightPosition, releaseObserver } from '../Game'
 
 beforeEach(() => {
+  releaseObserver()
   observe((knightPosition: KnightPosition) =>
     render(<Board knightPosition={knightPosition} />)
   )
-})
-
-afterEach(() => {
-  releaseObserver()
 })
 
 test('should exist Knight on board', () => {
@@ -47,13 +44,12 @@ test('should board have 64 cells', () => {
 
 test('Should be yellow that can Knight drop and Knight position square should be red', () => {
   const Knight = screen.getByText('♘')
-
   const boardSquares = screen.getAllByRole('gridcell')
 
   fireEvent.dragStart(Knight)
   fireEvent.drag(Knight)
-  fireEvent.dragEnter(boardSquares[58])
-  fireEvent.dragOver(boardSquares[58])
+  fireEvent.dragEnter(boardSquares[57]) // 57 is initial position of Knight
+  fireEvent.dragOver(boardSquares[57])
 
   const KnightDropableSquares = screen.getAllByTestId('YellowOverlay')
   expect(KnightDropableSquares.length).toBe(3)
@@ -61,4 +57,18 @@ test('Should be yellow that can Knight drop and Knight position square should be
     expect(square).toHaveStyle('backgroundColor: yellow')
   })
   expect(screen.getByTestId('RedOverlay')).toHaveStyle('backgroundColor: red')
+})
+
+test('Knight can drag and drop where yellow color cells', () => {
+  // Knight initial position: "57" of 64 Cell's araay
+  expect(screen.getByTestId('KnightPosition: 57')).toHaveTextContent('♘')
+
+  const Knight = screen.getByText('♘')
+  // dropable cell numbers: "40", "42", "51" of 64 Cell's araay
+  fireEvent.dragStart(Knight)
+  fireEvent.dragEnter(screen.getAllByRole('gridcell')[40])
+  fireEvent.dragOver(screen.getAllByRole('gridcell')[40])
+  fireEvent.drop(screen.getAllByRole('gridcell')[40])
+
+  expect(screen.getByTestId('KnightPosition: 40')).toHaveTextContent('♘')
 })

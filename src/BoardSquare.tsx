@@ -1,4 +1,4 @@
-import React, { HTMLProps } from 'react'
+import React from 'react'
 import Square from './Square'
 import Overlay from './Overlay'
 import { canMoveKnight, moveKnight, X, Y } from './Game'
@@ -8,10 +8,10 @@ import { useDrop } from 'react-dnd'
 interface Props {
   x: X
   y: Y
-  others?: HTMLProps<HTMLElement>[]
+  index: number
 }
 
-const BoardSquare: React.FC<Props> = ({ x, y, children, ...other }) => {
+const BoardSquare: React.FC<Props> = ({ x, y, index, children }) => {
   const black = (x + y) % 2 === 1
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: ItemTypes.KNIGHT,
@@ -27,12 +27,12 @@ const BoardSquare: React.FC<Props> = ({ x, y, children, ...other }) => {
     <div
       role="gridcell"
       ref={drop}
+      data-testid={children ? 'KnightPosition: ' + index : index}
       style={{
         position: 'relative',
         width: '100%',
         height: '100%',
       }}
-      {...other}
     >
       <Square black={black}>{children}</Square>
       {isOver && !canDrop && <Overlay color="red" data-testid="RedOverlay" />}
