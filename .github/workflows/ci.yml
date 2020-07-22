@@ -1,4 +1,4 @@
-name: CI tasks
+name: CI
 on:
     push:
         branches:
@@ -7,7 +7,7 @@ on:
             branches:
                 - master
 jobs:
-    build-and-tests:
+    build-tests-lint:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -15,12 +15,8 @@ jobs:
               with:
                   persist-credentials: false
             - name: Install and Build
-              run: |
+            - run: |
                   yarn install
                   yarn build
-            - name: test
-              run: |
-                  yarn test
-            - name: lint
-              run: |
-                  yarn lint
+            - run: yarn test
+            - run: yarn lint
