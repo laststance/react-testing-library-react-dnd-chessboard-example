@@ -5,10 +5,13 @@ import Board from '../Board'
 import { observe, KnightPosition, releaseObserver } from '../Game'
 
 beforeEach(() => {
-  releaseObserver()
   observe((knightPosition: KnightPosition) =>
     render(<Board knightPosition={knightPosition} />)
   )
+})
+
+afterEach(() => {
+  releaseObserver()
 })
 
 test('should exist Knight on board', () => {
