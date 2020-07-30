@@ -4,6 +4,19 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import Board from '../Board'
 import { observe, KnightPosition, releaseObserver } from '../Game'
 
+function dragAndDrop(knight: HTMLElement, cell: HTMLElement) {
+  fireEvent.dragStart(knight)
+  fireEvent.dragEnter(cell)
+  fireEvent.dragOver(cell)
+  fireEvent.drop(cell)
+}
+
+function dragHold(knight: HTMLElement, cell: HTMLElement) {
+  fireEvent.dragStart(knight)
+  fireEvent.dragEnter(cell)
+  fireEvent.dragOver(cell)
+}
+
 beforeEach(() => {
   /*
    * Every time Knight initial position: "57"
@@ -19,7 +32,7 @@ afterEach(() => {
   releaseObserver()
 })
 
-test('should exist Knight and certain visual on board', () => {
+test('should exist Knight with certain visual on board', () => {
   const Knight = screen.getByText('♘')
 
   const display = window.getComputedStyle(Knight).getPropertyValue('display')
@@ -50,32 +63,54 @@ test('should board have 64 cells', () => {
   expect(boardSquares.length).toBe(64) // chessboard ragnge is 8 * 8
 })
 
-test('Should be yellow square bg-color where accept Knight drop and Knight position square should be red bg-color', () => {
-  const Knight = screen.getByText('♘')
+test("Knight initial position is 'index 57' of all cell array", () => {
+  expect(screen.getByTestId('KnightPosition: 57')).toHaveTextContent('♘')
+})
+
+test('testing holding drag item state', () => {
+  const knight = screen.getByText('♘')
   const boardSquares = screen.getAllByRole('gridcell')
+  const knightPosition = boardSquares[57]
 
-  fireEvent.dragStart(Knight)
-  fireEvent.dragEnter(boardSquares[57]) // 57 is initial position of Knight
-  fireEvent.dragOver(boardSquares[57])
+  dragHold(knight, knightPosition)
 
+  // Yellow cell is knight moving range
   const KnightDropableSquares = screen.getAllByTestId('YellowOverlay')
+
+  // Initially knight can move to 3 position
   expect(KnightDropableSquares.length).toBe(3)
+
+  // Yellow color css check
   KnightDropableSquares.forEach((square) => {
     expect(square).toHaveStyle('backgroundColor: yellow')
   })
+
+  // Red cell is current knight position when hold dragging
   expect(screen.getByTestId('RedOverlay')).toHaveStyle('backgroundColor: red')
 })
 
-test('Knight can drag and drop where yellow color cells', () => {
-  // Knight initial position: "57" of 64 Cell's araay
-  expect(screen.getByTestId('KnightPosition: 57')).toHaveTextContent('♘')
+describe('Knight can drag and drop initial moving range', () => {
+  // Knight initially has moving position 'index: 40 42 51' of 64 cell array
+  test('gridcell[40]', () => {
+    const knight = screen.getByText('♘')
+    const yellowCell40 = screen.getAllByRole('gridcell')[40]
+    dragAndDrop(knight, yellowCell40)
+    expect(screen.getByTestId('KnightPosition: 40')).toHaveTextContent('♘')
+  })
 
-  const Knight = screen.getByText('♘')
-  // dropable cell numbers: "40", "42", "51" of 64 Cell's araay
-  fireEvent.dragStart(Knight)
-  fireEvent.dragEnter(screen.getAllByRole('gridcell')[40])
-  fireEvent.dragOver(screen.getAllByRole('gridcell')[40])
-  fireEvent.drop(screen.getAllByRole('gridcell')[40])
+  test('gridcell[42]', () => {
+    const knight = screen.getByText('♘')
+    const yellowCell42 = screen.getAllByRole('gridcell')[42]
+    dragAndDrop(knight, yellowCell42)
+    expect(screen.getByTestId('KnightPosition: 42')).toHaveTextContent('♘')
+  })
 
-  expect(screen.getByTestId('KnightPosition: 40')).toHaveTextContent('♘')
+  test('gridcell[51]', () => {
+    const knight = screen.getByText('♘')
+    const yellowCell51 = screen.getAllByRole('gridcell')[51]
+    dragAndDrop(knight, yellowCell51)
+    expect(screen.getByTestId('KnightPosition: 51')).toHaveTextContent('♘')
+  })
 })
+
+test('Knight can not drop not yellow cell', () => {})
