@@ -48,5 +48,6 @@ function emitChange(): void {
 export function releaseObserver(): void {
   if (typeof observer === 'function') {
     observer = null
+    knightPosition = [1, 7]
   }
 }

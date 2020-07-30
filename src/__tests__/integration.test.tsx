@@ -67,7 +67,7 @@ test("Knight initial position is 'index 57' of all cell array", () => {
   expect(screen.getByTestId('KnightPosition: 57')).toHaveTextContent('♘')
 })
 
-test('testing holding drag item state', () => {
+test('testing the moment of dragging hold', () => {
   const knight = screen.getByText('♘')
   const boardSquares = screen.getAllByRole('gridcell')
   const knightPosition = boardSquares[57]
