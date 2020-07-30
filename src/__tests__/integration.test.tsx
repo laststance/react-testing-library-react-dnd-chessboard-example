@@ -113,4 +113,18 @@ describe('Knight can drag and drop initial moving range', () => {
   })
 })
 
-test('Knight can not drop not yellow cell', () => {})
+test('Knight can not drop not yellow cell', () => {
+  const knight = screen.getByText('♘')
+  const whiteCell = screen.getByTestId('0')
+  const blackCell = screen.getByTestId('1')
+  expect(whiteCell.firstChild).toHaveStyle('background-color: white;')
+  expect(blackCell.firstChild).toHaveStyle('background-color: black;')
+
+  dragAndDrop(knight, whiteCell)
+
+  expect(screen.getByTestId('KnightPosition: 57')).toHaveTextContent('♘')
+
+  dragAndDrop(knight, blackCell)
+
+  expect(screen.getByTestId('KnightPosition: 57')).toHaveTextContent('♘')
+})
