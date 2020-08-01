@@ -21,3 +21,6 @@ yarn install
 yarn start # run chessboard example on browser
 yarn test # run tests by jest
 ```
+
+# License
+MIT 📒
