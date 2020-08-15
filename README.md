@@ -1,4 +1,5 @@
-![CI](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/workflows/CI/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/362d138c-4c28-4cb2-8012-5078bed52121/deploy-status)](https://app.netlify.com/sites/react-testing-library-react-dnd-chessboard-example/deploys)
+![CI](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/workflows/CI/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/362d138c-4c28-4cb2-8012-5078bed52121/deploy-status)](https://app.netlify.com/sites/react-testing-library-react-dnd-chessboard-example/deploys) 
+
 # React Testing Library React Dnd Chessboard Example 
 
 
@@ -8,7 +9,6 @@ This repository contain [react-dnd tutorial chessboard](https://react-dnd.github
 ### [🐙 Testing Code `src/__tests__/integration.test.tsx`](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/blob/master/src/__tests__/integration.test.tsx)
 
 <a href="https://react-testing-library-react-dnd-chessboard-example.netlify.app/"><img src="https://raw.githubusercontent.com/laststance/react-testing-library-react-dnd-chessboard-example/master/top.png" alt="chessboard"/></a>
-
 
 
 
@@ -25,3 +25,7 @@ yarn test # run tests by jest
 
 # License
 MIT 📒
+
+
+
+[![Edit react-testing-library-react-dnd-chessboard-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-testing-library-react-dnd-chessboard-example-2k8hd?fontsize=14&hidenavigation=1&theme=dark&view=preview)
