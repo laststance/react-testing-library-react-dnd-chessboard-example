@@ -1,4 +1,19 @@
 /*
+ * Copyright (c) The code is copy & modified from original reposotory(https://github.com/react-dnd/react-dnd/tree/main/packages/documentation/examples-hooks/src/00-chessboard).
+ *
+ * Author
+ * Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)
+ *
+ * Contributors
+ * Chris Trevino <darthtrevino@gmail.com> (http://github.com/darthtrevino)
+ * Jordan Gensler (http://github.com/kesne)
+ * Gagan (https://github.com/thetechie)
+ *
+ * The MIT License
+ *
+ */
+
+/*
  This is chess rules definition
  */
 export type X = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
