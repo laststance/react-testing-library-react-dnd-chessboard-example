@@ -4,6 +4,8 @@
 
 This repository contain [react-dnd tutorial chessboard](https://react-dnd.github.io/react-dnd/docs/tutorial) and [testing code](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/blob/master/src/__tests__/integration.test.tsx) with [react-testing-library](https://testing-library.com/docs/react-testing-library/intro).  
 
+> [📕 Airticle: Testing React DnD by React Testing Library](https://dev.to/malloc007/testing-react-dnd-by-react-testing-library-4ob)
+
 ### [♟ Chessboard App ♟](https://react-testing-library-react-dnd-chessboard-example.netlify.app/) source from [React-DnD Official Document](https://github.com/react-dnd/react-dnd/tree/main/packages/documentation/examples-hooks/src/00-chessboard). 📒
 
 ### [🐙 Testing Code `src/__tests__/integration.test.tsx`](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/blob/master/src/__tests__/integration.test.tsx)
