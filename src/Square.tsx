@@ -15,11 +15,8 @@
 
 import React from 'react'
 
-type Color = 'black' | 'white'
-
 interface Props {
   black?: boolean
-  white?: boolean
 }
 
 const Square: React.FC<Props> = ({ black, children }) => {
