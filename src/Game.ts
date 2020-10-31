@@ -28,7 +28,7 @@ let observer: Observer | null = null
 
 export type Observer = (knightPosition: KnightPosition) => void
 
-export function observe(o: Observer) {
+export function observe(o: Observer): void {
   if (typeof observer === 'function') {
     throw new Error('Multiple observers not implemented.')
   }
