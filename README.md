@@ -2,6 +2,9 @@
 
 # React Testing Library React Dnd Chessboard Example 
 
+## Update: This repository has been imported into the [Original React DnD repository.](https://github.com/react-dnd/react-dnd/pull/2733)<br/> Please reffer [Original reposotory](https://github.com/react-dnd/react-dnd/tree/main/packages/examples-hooks/src/00-chessboard) instead here.
+
+
 This repository contain [react-dnd tutorial chessboard](https://react-dnd.github.io/react-dnd/docs/tutorial) and [testing code](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/blob/master/src/__tests__/integration.test.tsx) with [react-testing-library](https://testing-library.com/docs/react-testing-library/intro).  
 
 > [📕 Airticle: Testing React DnD by React Testing Library](https://dev.to/malloc007/testing-react-dnd-by-react-testing-library-4ob)
