@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint": "eslint . --ext .ts,.tsx,.js --resolve-plugins-relative-to .",
     "lint:fix": "eslint . --ext .ts,.tsx,.js --fix"
   },
   "browserslist": {
@@ -39,9 +39,10 @@
   "devDependencies": {
     "@types/react-dnd": "^3.0.2",
     "@types/react-dnd-html5-backend": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-config-typescript": "^3.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.2"
