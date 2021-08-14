@@ -1,4 +1,4 @@
-![CI](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/workflows/CI/badge.svg) [![Depfu](https://badges.depfu.com/badges/e5e4da86755da4c888f51c5d146065e1/overview.svg)](https://depfu.com/github/laststance/react-testing-library-react-dnd-chessboard-example?project_id=14125) [![Netlify Status](https://api.netlify.com/api/v1/badges/362d138c-4c28-4cb2-8012-5078bed52121/deploy-status)](https://app.netlify.com/sites/react-testing-library-react-dnd-chessboard-example/deploys) 
+![CI](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/workflows/CI/badge.svg) [![Depfu](https://badges.depfu.com/badges/e5e4da86755da4c888f51c5d146065e1/overview.svg)](https://depfu.com/github/laststance/react-testing-library-react-dnd-chessboard-example?project_id=14125)
 
 # React Testing Library React Dnd Chessboard Example 
 
