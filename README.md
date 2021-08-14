@@ -1,4 +1,5 @@
-![CI](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/workflows/CI/badge.svg) [![Depfu](https://badges.depfu.com/badges/e5e4da86755da4c888f51c5d146065e1/overview.svg)](https://depfu.com/github/laststance/react-testing-library-react-dnd-chessboard-example?project_id=14125)
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=react-testing-library-react-dnd-chessboard-example) ![CI](https://github.com/laststance/react-testing-library-react-dnd-chessboard-example/workflows/CI/badge.svg) [![Depfu](https://badges.depfu.com/badges/e5e4da86755da4c888f51c5d146065e1/overview.svg)](https://depfu.com/github/laststance/react-testing-library-react-dnd-chessboard-example?project_id=14125)
+
 
 # React Testing Library React Dnd Chessboard Example 
 
