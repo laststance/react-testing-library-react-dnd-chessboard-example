@@ -39,8 +39,8 @@
   "devDependencies": {
     "@types/react-dnd": "^3.0.2",
     "@types/react-dnd-html5-backend": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-config-typescript": "^3.0.0",
